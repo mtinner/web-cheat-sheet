@@ -209,7 +209,7 @@ const { fingers, head } = human
 	},
 	{
 		title: 'Export',
-		text: 'Exportieren von variablen, funktionen, typen, interface, klassen usw.',
+		text: 'Exportieren von Variablen, Funktionen, Typen, Interface, Klassen usw.',
 		code: `
 export type Status = 'initializing' | 'running' | 'done'
 export const human = { legs: 2, head: 1, fingers: 10 };

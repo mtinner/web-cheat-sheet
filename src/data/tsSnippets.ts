@@ -75,12 +75,23 @@ names.sort((a, b) => {
 	},
 	{
 		title: 'Interface',
-		text: 'Schnittstellendefinition',
+		text: 'Objektdefinition', // https://dev.to/saadsharfuddin/type-vs-interface-in-typescript-35i6
 		code: `
 interface Person {
-  name: string
-  occupation: string
-  age: number
+  name: string;
+  occupation: string;
+  age: number;
+}
+    `.trim()
+	},
+	{
+		title: 'Type',
+		text: 'Allgemeine Definition',
+		code: `
+type Person = {
+  name: string;
+  occupation: string;
+  age: number;
 }
     `.trim()
 	},
@@ -96,6 +107,29 @@ const batman = {
 batman.occupation = 'Businessman'
 // Explizit typisiert
 const spiderman: Person = {/* ... */}
+    `.trim()
+	},
+	{
+		title: 'Optionale Properties',
+		text: 'Kann auf type und interface definiert werden',
+		code: `
+		type Person = {
+  name: string;
+  occupation?: string;
+  age: number;
+}
+
+// occupation ist optional	
+const batman: Person = {
+  name: 'Bruce Wayne',
+  age: 38
+}
+
+const heisenberg: Person = {
+  name: 'Walter White',
+  occupation: 'Chemist'
+  age: 64
+}
     `.trim()
 	},
 	{
@@ -171,6 +205,15 @@ const [eins, zwei, drei] = row
 		code: `
 const human = { legs: 2, head: 1, fingers: 10 }
 const { fingers, head } = human
+    `.trim()
+	},
+	{
+		title: 'Export',
+		text: 'Exportieren von variablen, funktionen, typen, interface, klassen usw.',
+		code: `
+export type Status = 'initializing' | 'running' | 'done'
+export const human = { legs: 2, head: 1, fingers: 10 };
+export const foo = () => 42;
     `.trim()
 	}
 ]
